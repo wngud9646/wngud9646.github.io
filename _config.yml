@@ -1,9 +1,8 @@
-title: Moonwalk
-author: Abhinav Saxena
+title: DevOps 배워가기
+author: 이주형
 url: https://wngud9646.github.io/ # root address of the site
 description: > # description of the site (multiple lines allowed)
-  Moonwalk is a fast and elegant Jekyll theme with a clean dark mode. It comes with horizontal list (for navbar and footer), card list (for portfolio), and a generic vertical list. It is very easy to modify in case you want to build over it - please see _layouts/home.html to do that.
-
+  코드스테이트 DevOps 4기를 진행하며 공부한 내용들을 정리하는 페이지입니다.
 permalink: /:slug
 
 favicon: "./logo.png" # relative path to site's favicon
@@ -36,7 +35,6 @@ theme_config:
     title_projects: Portfolio
     title_misc_list: Details
     title_blog: Blog
-    title_old_projects: Old Projects
 
 soopr:
   publish_token: "" # sign up at https://www.soopr.co to get your publish token and personalize share and reaction options

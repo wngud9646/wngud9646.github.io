@@ -32,12 +32,14 @@ Dev는 잦은 업데이트를 통해 서비스를 개선하려고 한다면, Ops
 Dev는 잦은 변화를 추구하지만 Ops는 이를 지양한다.<br>
 이러한 차이가 충돌을 만들어내고, 업무 상에 있어 어려움을 도출해 낼 수 있다.
 
-출처: https://www.codestates.com/blog/content/%EB%8D%B0%EB%B8%8C%EC%98%B5%EC%8A%A4-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EA%B0%80-%ED%95%98%EB%8A%94%EC%9D%BC<br><br>
+[출처](https://www.codestates.com/blog/content/%EB%8D%B0%EB%B8%8C%EC%98%B5%EC%8A%A4-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EA%B0%80-%ED%95%98%EB%8A%94%EC%9D%BC): 
+https://www.codestates.com/blog/content/%EB%8D%B0%EB%B8%8C%EC%98%B5%EC%8A%A4-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EA%B0%80-%ED%95%98%EB%8A%94%EC%9D%BC<br><br>
 
 결국 DevOps의 추구하는 바는 Dev와 Ops을 바람을 모두 충족하는 것이고, <br>
 이는 품질을 낮추지 않으면서도 가치있는 소프트웨어를 전달하는 과정을 더욱 빠르게 하는 것이다.
 
-출처: https://www.jetbrains.com/ko-kr/teamcity/ci-cd-guide/devops-ci-cd/
+[출처](https://www.jetbrains.com/ko-kr/teamcity/ci-cd-guide/devops-ci-cd/): 
+https://www.jetbrains.com/ko-kr/teamcity/ci-cd-guide/devops-ci-cd/
 <br><br><br>
 
 (Google Play Store 배포용) 안드로이드 앱 버전 기준에 따르면 버전은 <br>
@@ -55,26 +57,31 @@ Dev는 잦은 변화를 추구하지만 Ops는 이를 지양한다.<br>
 위의 버전 중에서는 프로덕션이 가장 안정적인 버전이라고 할 수 있다. <br>
 두 번의 테스트 이후 사용자들에게 실제로 배포되는 버전인만큼, 초기 버전들보다는 안정성이 높다. 
 
-출처 : https://support.google.com/googleplay/android-developer/answer/9859348
+[출처](https://support.google.com/googleplay/android-developer/answer/9859348): 
+https://support.google.com/googleplay/android-developer/answer/9859348
 <br><br>
 
 각 클라우드 서비스 벤더들에는 DevOps를 어떻게 정의하고 있을까?
 * AWS : DevOps는 애플리케이션과 서비스를 빠른 속도로 제공할 수 있도록 조직의 역량을 향상시키는 문화 철학, 방식 및 도구의 조합입니다. <br>
 기존의 소프트웨어 개발 및 인프라 관리 프로세스를 사용하는 조직보다 제품을 더 빠르게 혁신하고 개선할 수 있습니다. <br>
 이러한 빠른 속도를 통해 조직은 고객을 더 잘 지원하고 시장에서 좀 더 효과적으로 경쟁할 수 있습니다.<br>
-출처: https://aws.amazon.com/ko/devops/what-is-devops/ <br>
+[출처](https://aws.amazon.com/ko/devops/what-is-devops/): 
+https://aws.amazon.com/ko/devops/what-is-devops/ <br>
 * Azure : 개발(Dev)과 운영(Ops)의 합성어인 DevOps는 고객에게 지속적으로 가치를 제공하도록 지원하는 사람, 프로세스 및 기술의 합집합입니다.<br><br>
 팀에는 DevOps가 어떤 의미일까요? <br>
 DevOps는 개발, IT 운영, 품질 엔지니어링, 보안 등 이제껏 서로 단절되었던 역할들이 서로 조율하고 협업하여 더욱더 안정적이고 뛰어난 제품을 생산할 수 있도록 지원합니다.<br>
  DevOps 방식과 도구를 비롯한 DevOps 문화를 도입하는 팀은 고객 요구 사항에 더 효과적으로 대응하고, 더욱 안심하고 애플리케이션을 빌드하며, 비즈니스 목표를 더 빨리 달성할 수 있습니다.<br>
- 출처: https://azure.microsoft.com/ko-kr/resources/cloud-computing-dictionary/what-is-devops/
+ [출처](https://azure.microsoft.com/ko-kr/resources/cloud-computing-dictionary/what-is-devops/): 
+ https://azure.microsoft.com/ko-kr/resources/cloud-computing-dictionary/what-is-devops/
 
 * GCP : 소프트웨어 배포 속도를 높이고 서비스 안정성을 개선하며 소프트웨어 이해관계자 간 공유 소유권을 구축하기 위한 조직적, 문화적 방법론인 DevOps <br>
-출처: https://cloud.google.com/devops/?hl=ko
+[출처](https://cloud.google.com/devops/?hl=ko): 
+https://cloud.google.com/devops/?hl=ko
 
 * 위키피디아 : 데브옵스(DevOps)는 소프트웨어의 개발(Development)과 운영(Operations)의 합성어로서, 소프트웨어 개발자와 정보기술 전문가 간의 소통, 협업 및 통합을 강조하는 개발 환경이나 문화를 말한다.<br>
  데브옵스는 소프트웨어 개발조직과 운영조직간의 상호 의존적 대응이며 조직이 소프트웨어 제품과 서비스를 빠른 시간에 개발 및 배포하는 것을 목적으로 한다.<br>
- 출처: https://ko.wikipedia.org/wiki/%EB%8D%B0%EB%B8%8C%EC%98%B5%EC%8A%A4
+ [출처](https://ko.wikipedia.org/wiki/%EB%8D%B0%EB%B8%8C%EC%98%B5%EC%8A%A4): 
+ https://ko.wikipedia.org/wiki/%EB%8D%B0%EB%B8%8C%EC%98%B5%EC%8A%A4
  <br><br>
 
 
@@ -83,7 +90,7 @@ DevOps는 개발, IT 운영, 품질 엔지니어링, 보안 등 이제껏 서로
  도구나 솔루션을 구매하면 Devops를 구현할 수 있다고 생각하는 것도 잘못된 것이다<br>
  Devops는 새로운 도구가 없더라도 가능하다. <br>
  기존에 사용하고 있던 도구들이 단순히 개발 혹은 운영과 같이 각각의 목적으로만 사용했다면 이들을 통합적으로 연결하여, 코드를 저장하고 관리하는 것뿐만 아니라 테스트와 배포까지 연결되는 인프라와 프로세스를 통합한 인프라를 만들어내는 것이다.<br>
- 출처: http://pds26.egloos.com/pds/201310/24/85/Devops1.pdf
+ [출처](http://pds26.egloos.com/pds/201310/24/85/Devops1.pdf): http://pds26.egloos.com/pds/201310/24/85/Devops1.pdf
 
  # Action Items
  DevOps를 정의한다면 어플리케이션과 서비스를 빠른 시간안에 제공하는 것을 목적으로 하는 문화 혹은 개발 환경, 기술들의 모음이라고 할 수 있겠다.<br><br>
@@ -91,8 +98,9 @@ DevOps는 개발, IT 운영, 품질 엔지니어링, 보안 등 이제껏 서로
  DevOps의 기술이 필요한 부분은 개인적으로 **'자동화'** 가 가장 중요한 부분으로 보인다. <br>
  이를 위해 CI/CD 파이프라인이 있으며, 자동화를 도입할 경우 DevOps에 수반되는 지속적인 코드 변경을 인프라가 견딜 수 있으며 또한 환경을 손쉽게 지속적으로 확장할 수 있다는 장점을 가진다. <br>
  자동화는 반복적인 작업이나 단순 작업의 부담을 경감함으로써 기업의 우수한 인력이 가장 중요한 업무에 집중할 수 있는 환경을 조성한다.<br>
- DevOps의 문화적인 부분으로 자유로운 정보 공유는 오픈소스 커뮤니티에서의 협업에 대한 기본적인 접근 방식이다. <br>
- 이를 통해 의사 결정 과정에서 투명성을 높이거나, 실패에 대한 두려움을 없앰으로써 실험적인 프로젝트를 권장하거나, 신뢰와 협업을 장려하는 보상 시스템을 구현하는 등의 기업 문화의 변화를 이끌어낼 수 있다.
+ DevOps의 문화적인 부분으로 제품의 전체 수명 주기에 대한 책임을 지는 여러 분야 팀을들 간의 자유로운 정보 공유는 협업에 대한 기본적인 접근 방식이다. <br>
+ 이를 통해 의사 결정 과정에서 투명성을 높이거나, 실패에 대한 두려움을 없앰으로써 실험적인 프로젝트를 권장하거나, 신뢰와 협업을 장려하는 보상 시스템을 구현하는 등의 기업 문화의 변화를 이끌어낼 수 있다. <br>
+ CI/CD은 지속적인 통합, 제공, 배포를 위한 조직 구성원 간의 빠른 의사소통과 협업이 전제되어야 한다.
 
  DevOps의 필요성으로는 일단 소프트웨어에서 사용되는 비용 중에 유지보수에 들어가는 비용이 50%가 넘어가고 있다. <br>
  이러한 유지보수의 비용을 줄이고, 리스크를 감소시키기 위한 애자일 방법론이 등장하면서 이를 적용시킨다.<br>

@@ -216,14 +216,14 @@ Create: Post
 Read: Get
 - 특정 리소스를 받기 위한 요청이다. 따라서, 리소스의 생성, 수정 및 삭제 등에 사용해서는 안된다
 
-Update: Post
+Update: Put
 - 변경 가능한 리소스를 업데이트하는 데 사용되며 항상 리소스 식별 정보를 포함해야 한다
 
 Delete: Delete
 - 특정 리소스를 제거하는 데 사용한다.<br>
  일반적으로 Request body가 아닌 URI 경로에 제거하려는 리소스의 ID를 전달한다.<br>
 
- ### PUT VS POST 
+ ### PUT VS POST <br>
  멱등성(Idempotence): 멱등성이란 여러번 수행해도 결과가 같음을 의미한다.<br>
  HTTP 메소드를 예를 들자면, GET, PUT, DELETE는 같은 경로로 여러 번 호출해도 결과가 같다.<br>
  그러나 POST는 매 호출마다 새로운 데이터가 추가된다. <br>

@@ -1,5 +1,5 @@
 ---
-title:  "HTTP"
+title:  "HTTP 기초"
 excerpt: "DevOps 부트캠프 Section 1 "
 
 categories:

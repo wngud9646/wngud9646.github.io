@@ -31,22 +31,7 @@ last_modified_at: 2023-04-05
 ## 선정 주제 : LMS
 ---
 ## API 명세
-| Method | Path | Request Header | Request Body | Response Status Code | Response Body |
-| --- | --- | --- | --- | --- | --- |
-| GET | /course | - | - | 200, 404 | list-of-course, {"result":"connection failed"} |
-| GET | /course?instructor_id=instructor_id | - | - | 200, 404 | list-of-course, {"result":"invalid instructorName/courseName/courseId supplied"} |
-| GET | /course?course_name=course_name | - | - | 200, 404 | list-of-course, {"result":"invalid instructorName/courseName/courseId supplied"} |
-| GET | /course?course_type=course_type | - | - | 200, 404 | list-of-course, {"result":"invalid instructorName/courseName/courseId supplied"} |
-| POST | /registration | Content-Type: application/json, Authorization | course_id | 201, 401, 404 | registration_id ,{"result":"authorization failed"} , {"해당 강좌 ID는 존재하지 않습니다"}|
-| GET | /registration | Authorization | - | 200, 401 | list-of-registration |
-| PATCH | /student | Authorization | list-of-student(optional) | 200, 401 | list-of-student, {"result":"authorization failed"} |
-| POST | /course | Authorization | list-of-course | 201, 401, 404 | list-of-course, {"result":"authorization failed"}, {"not a instructor"} |
-| PATCH | /course | Authorization | list-of-course(optional) | 200, 401, 404 | list-of-course, {"result":"authorization failed"}, {"not a instructor"} |
-| DELETE | /registration | Authorization | course_id | 200, 401, 404 | {"수강신청이 취소되었습니다."} ,{"result":"authorization failed"}, {"수강신청 내역이 없습니다."} |
-| GET | /getToken/student_id:{id} | - | - | 200, 404 | {tokenkey} , {"invalid id"} |
-| GET | /getToken/instructor_id:{id} | - | - | 200, 404 | {tokenkey} , {"invalid id"} |
-
-
+![alt text](/images/api_%EB%AA%85%EC%84%B8.png)
 ---
 list-of-course
 ```

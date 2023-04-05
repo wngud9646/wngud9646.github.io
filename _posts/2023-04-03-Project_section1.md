@@ -65,67 +65,6 @@ list-of-registration
   ]
 }
 ```
-### API 상세
-
-**(R)**
-
-| Method | Path | Request Header | Request Body | Response Status Code | Response Body |
-| --- | --- | --- | --- | --- | --- |
-| GET | /course | Authorization | - | 200, 401 | list-of-course, {"result":"authorization failed"} |
-
-**⇒  사용자는 모든 수업을 조회할 수 있다.**
-
-**(R)**
-
-| GET | /course?instructor_id=instructor_id | api-key(query key) | - | 200, 404 | list-of-course, {"result":"invalid instructorName/courseName/courseId supplied"} |
-| --- | --- | --- | --- | --- | --- |
-| GET | /instructor?instructor_name=instructor_name | - | - | 200, 404 | instructorId, {"result":"invalid instructorName/courseName/courseId supplied"} |
-| GET | /course?course_name=course_name | - | - | 200, 404 | list-of-course, {"result":"invalid instructorName/courseName/courseId supplied"} |
-| GET | /course?course_type=course_type | - | - | 200, 404 | list-of-course, {"result":"invalid instructorName/courseName/courseId supplied"} |
-
-**⇒ 사용자는 특정 분류의 수업을 조회할 수 있다. (강의자, 수업명, 수업분류 기준)**
-
-**(C)**
-
-| POST | /registration | Content-Type: application/json, Authorization, student_id | course_id | 201, 401 | list-of-registration, {"result":"authorization failed"} |
-| --- | --- | --- | --- | --- | --- |
-
-**⇒ 사용자는 수업을 수강신청 할 수 있다.**
-
-**(R)**
-
-| GET | /registration | Authorization, student_id | - | 200, 401 | list-of-registration |
-| --- | --- | --- | --- | --- | --- |
-
-**⇒ 사용자는 모든 수강중인 수업을 조회할 수 있다.**
-
-**(U)**
-
-| PUT | /student | Authorization, student_id | list-of-course(optional) | 200, 401 | list-of-student, {"result":"authorization failed"} |
-| --- | --- | --- | --- | --- | --- |
-
-**⇒ 사용자는 이메일 정보와 같은 개인정보를 변경할 수 있다.**
-
-**(C)**
-
-| POST | /course | Authorization, instructor-id | list-of-course | 201, 401 | list-of-course, {"result":"authorization failed"} |
-| --- | --- | --- | --- | --- | --- |
-
-**⇒ 사용자의 타입이 강의자일 경우 새로운 수업을 생성할 수 있다.**
-
-**(U)**
-
-| PUT | /course | Authorization, instructor-id | list-of-course(optional) | 200, 401 | list-of-course, {"result":"authorization failed"} |
-| --- | --- | --- | --- | --- | --- |
-
-**⇒ 사용자의 타입이 강의자일 경우 수업의 정보를 변경할 수 있다.**
-
-**(D)**
-
-| DELETE | /registration | Authorization, student_id | course_id | 200, 401 | list-of-registration, {"result":"authorization failed"} |
-| --- | --- | --- | --- | --- | --- |
-
-**⇒ 사용자는 수업에 대한 수강신청을 취소 할 수 있다.**
 
 <br><br>
 

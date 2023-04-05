@@ -9,9 +9,9 @@ navbar_entries:
     url: https://www.abhinav.co
 
 project_entries:
-  - title: Session 1 Project
+  - title: Section 1 Project
     url: https://github.com/cs-devops-bootcamp/Devops-04-S1-Team6-1
-    desc: Session 1 Project Github link
+    desc: Section 1 Project Github link
 
   - title: Project 2
     url: overview-post

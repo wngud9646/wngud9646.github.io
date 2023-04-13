@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2023-04-12
-last_modified_at: 2023-04-12
+last_modified_at: 2023-04-13
 ---
 # Docker Registry, Repository, Tag
 ## 레지스트리(Registry)
@@ -119,6 +119,8 @@ sudo docker rm [컨테이너 ID]
 
 # 강제로 중지하고 삭제하고 싶으면 다음을 입력하면 된다.
 sudo docker rm --force [컨테이너 ID]
+```
+```
 # 명령줄 하나로 실행중 + 중지된 도커 컨테이너들을 지우고 싶으면
 sudo docker rm -f $(docker ps -aq)
 ```

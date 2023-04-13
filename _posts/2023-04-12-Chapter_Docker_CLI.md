@@ -193,6 +193,7 @@ Dockerfile의 내용은 아래와 같습니다.
   # apachectl을 foreground(즉, deamon)상태로 돌아가도록 한다.
   CMD ["apachectl", "-D", "FOREGROUND"]
 ```
+
 - FROM : 베이스 이미지
   - 어느 이미지에서 시작할건지를 의미한다.
 - MAINTAINER : 이미지를 생성한 개발자의 정보 (1.13.0 이후 사용 X)
@@ -239,6 +240,7 @@ https://wooono.tistory.com/679
 ```
   docker build -t apache-image .
 ```
+
 생성된 이미지 확인
 ```
   docker images

@@ -1,5 +1,5 @@
 ---
-title:  "환경 변수"
+title:  "지속적 배포"
 excerpt: "DevOps 부트캠프 Section 2 "
 
 categories:

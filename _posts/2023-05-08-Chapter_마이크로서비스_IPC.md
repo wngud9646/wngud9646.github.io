@@ -10,8 +10,8 @@ tags:
 toc: true
 toc_sticky: true
  
-date: 2023-05-03
-last_modified_at: 2023-05-03
+date: 2023-05-08
+last_modified_at: 2023-05-08
 ---
 # IPC
 IPC는 Inter-Process Communication의 약자로, 프로세스 간의 통신을 의미한다. <br>

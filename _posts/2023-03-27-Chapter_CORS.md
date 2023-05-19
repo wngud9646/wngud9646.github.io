@@ -1,5 +1,5 @@
 ---
-title:  "Server"
+title:  "CORS"
 excerpt: "DevOps 부트캠프 Section 1 "
 
 categories:
@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2023-03-27
-last_modified_at: 2023-03-27
+last_modified_at: 2023-03-29
 ---
 # CORS
 브라우저에서는 보안적인 이유로 cross-origin HTTP 요청들을 제한한다. 그래서 cross-origin 요청을 하려면 서버의 동의가 필요하다. 만약 서버가 동의한다면 브라우저에서는 요청을 허락하고, 동의하지 않는다면 브라우저에서 거절한다.
@@ -79,6 +79,7 @@ Simple requests가 아닌 cross-origin요청은 모두 preflight 요청을 하�
 - Access-Control-Request-Method
   - preflight 요청을 할 때 실제 요청에서 어떤 메서드를 사용할 것인지 서버에게 알리기 위해 사용된다.
 - Access-Control-Request-Headers
+  - preflight요청을 할 때 실제 요청에서 어떤 header를 사용할 것인지 서버에게 알리기 위해 사용된다.
   - preflight요청을 할 때 실제 요청에서 어떤 header를 사용할 것인지 서버에게 알리기 위해 사용된다.
 
 ### 응답 헤더 목록

@@ -48,45 +48,9 @@ serverless
 
 템플릿은 기본적으로 region이 설정되어있지 않으므로, 생성된 serverless project 디렉토리에서 serverless.yml을 수정한다.
 
-```
-provider:
-  name: aws
-  runtime: nodejs14.x
-  region: ap-northeast-2
-```
-
 위와 같이 수정하면 aws region이 ap-northeast-2로 설정된다.
 
 이제 실질적으로 project에서 동작하는 index.js를 수정한다.
-
-```
-module.exports.hello = async (event) => {
-  let inputValue, outputValue
-  console.log(event.body)
-
-  if (event.body) {
-
-    let body = JSON.parse(event.body)
-
-
-    inputValue = parseInt(body.input)
-    outputValue = inputValue + 1
-  }
-
-  const message = `메시지를 받았습니다. 입력값: ${inputValue}, 결과: ${outputValue}`
-
-  return {
-    statusCode: 200,
-    body: JSON.stringify(
-      {
-        message
-      },
-      null,
-      2
-    ),
-  };
-};
-```
 
 #### 트러블 슈팅
 위의 작업에서 트러블 슈팅한 내용
@@ -140,29 +104,6 @@ DLQ는 실패한 메시지를 안전하게 보관하고, 재처리 및 디버깅
 - 장애 내구성: SQS와 DLQ를 연결하면 장애 내구성이 향상된다. <br>
 SQS는 여러 가용 영역에 걸쳐 메시지를 복제하고 저장하기 때문에, 메시지 손실을 방지하고 시스템의 안정성을 보장할 수 있다.
 
-
-```
-const consumer = async (event) => {
-  await delay(5000);
-  for (const record of event.Records) {
-    console.log("Message Body: ", record.body);
-
-    let inputValue, outputValue
-
-    const body = JSON.parse(record.body);
-    if (body && typeof body.input === 'number') {
-      inputValue = body.input;
-      outputValue = inputValue + 1;
-    }
-
-
-    const message = `메시지를 받았습니다. 입력값: ${inputValue}, 결과: ${outputValue}`
-    console.log(message)
-
-  }
-};
-```
-
 consumer를 위와 같이 구성하면, 아까와 같이 body에 input이라는 key를 넣고, sqs에 메세지를 전달하는 lambda의 엔드포인트로 보낸다면, consumer에서 위와 같이 소비하고, cloudwatch에 로그를 남기게 된다.
 
 
@@ -178,38 +119,6 @@ consumer를 위와 같이 구성하면, 아까와 같이 body에 input이라는 
 AWS Secret Manager를 사용하여 환경변수들을 관리한다.
 
 여기서 기존에 없던 새로운 파일은 만들어
-```
-// secretsManager.js
-
-const { SecretsManagerClient, GetSecretValueCommand } = require("@aws-sdk/client-secrets-manager");
-
-const getSecrets = async (secretName) => {
-  const client = new SecretsManagerClient({
-    region: "ap-northeast-2", // Replace with your desired AWS region
-  });
-
-  try {
-    const response = await client.send(
-      new GetSecretValueCommand({
-        SecretId: secretName,
-        VersionStage: "AWSCURRENT",
-      })
-    );
-
-    if (response.SecretString) {
-      const secret = JSON.parse(response.SecretString);
-      return secret;
-    } else {
-      throw new Error("Secret value is not available.");
-    }
-  } catch (error) {
-    throw new Error(`Error retrieving secrets: ${error.message}`);
-  }
-};
-
-module.exports = { getSecrets };
-```
-
 저장된 Secret들을 가져오는 모듈을 작성한다.
 
 해당 내용을 토대로, 환경변수들을 드러나지 않게 사용하게 할 수 있었다.
@@ -217,70 +126,12 @@ module.exports = { getSecrets };
 해당 단계에서 나타낸 에러로는 lambda의 실행 역활에서 Secret Manager를 참고할 수 있는 권한이 없어, 이를 직접 설정해 주어야했다. <br>
 이 부분은 serverless.yml에서 내용을 수정할 수도 있었다.
 
-
-```
-# serverless.yml
-
-service: sales-api
-frameworkVersion: '3'
-
-provider:
-  name: aws
-  runtime: nodejs14.x
-  region: ap-northeast-2
-  iam:
-    role:
-      statements:
-        - Effect: Allow
-          Action:
-            - secretsmanager:*
-          Resource: "*"
-        - Effect: Allow
-          Action:
-            - sns:*
-          Resource: "*"
-
-functions:
-  api:
-    handler: handler.handler
-    events:
-      - httpApi: '*'
-```
-
 <br><br>
 
 ## Step 2 : “재고 없음” 메시지 전달 시스템 구성
 아키텍처 상으로 재고가 없는 경우, 해당 이벤트에 대한 메세지가 AWS SNS로 발행되고, SNS에 구독되어 있는 AWS SQS가 해당 메세지를 Queue에 담는다.
 
 해당 아키텍처의 구현을 위하여 serverless.yml을 수정하였다.
-
-```
-resources:
-  Resources:
-    snsTopic:
-      Type: AWS::SNS::Topic
-      Properties:
-        DisplayName: stock_empty
-        TopicName: stock_empty
-
-    sqsQueue:
-      Type: AWS::SQS::Queue
-      Properties:
-        QueueName: stock_queue
-        RedrivePolicy:
-          maxReceiveCount: 5
-
-    snsSubscription:
-      Type: AWS::SNS::Subscription
-      Properties:
-        Protocol: sqs
-        Endpoint:
-          Fn::GetAtt: [sqsQueue, Arn]
-        TopicArn:
-          Ref: snsTopic
-
-```
-
 
 해당 과정을 통해 resource들을 IaC로 생성할 수 있었는데, 위와 같이 생성된 리소스 중에서 SNS와 SQS의 구독이 제대로 작동하지 않는다.
 
@@ -292,40 +143,6 @@ resources:
 <br><br>
 
 ## Step 3 : 메시지를 Factory API로 전송하는 Lambda 구성 및 DLQ 추가
-
-```
-resources:
-  Resources:
-    snsTopic:
-      Type: AWS::SNS::Topic
-      Properties:
-        DisplayName: stock_empty
-        TopicName: stock_empty
-
-    sqsQueue:
-      Type: AWS::SQS::Queue
-      Properties:
-        QueueName: stock_queue
-        RedrivePolicy:
-          deadLetterTargetArn:
-            Fn::GetAtt: [sqsDlqQueue, Arn]
-          maxReceiveCount: 5
-
-    sqsDlqQueue:
-      Type: AWS::SQS::Queue
-      Properties:
-        QueueName: dead_letter_queue
-
-    snsSubscription:
-      Type: AWS::SNS::Subscription
-      Properties:
-        Protocol: sqs
-        Endpoint:
-          Fn::GetAtt: [sqsQueue, Arn]
-        TopicArn:
-          Ref: snsTopic
-
-```
 
 Dlq를 resource에서 만들어주고, SQS에서 deadLetterTargetArn을 작성해주면, Dlq와 연결이 된다.
 

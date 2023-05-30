@@ -1,5 +1,5 @@
 ---
-title:  "Infrastructure as Code"
+title:  "kubernetes"
 excerpt: "DevOps 부트캠프 Section 3"
 
 categories:
@@ -10,8 +10,8 @@ tags:
 toc: true
 toc_sticky: true
  
-date: 2023-05-12
-last_modified_at: 2023-05-12
+date: 2023-05-18
+last_modified_at: 2023-05-18
 ---
 # 쿠버네티스
 쿠버네티스란 컨테이너화된 애플리케이션의 배포, 확장 및 관리를 자동화하는 오픈 소스 시스템이다.

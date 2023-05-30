@@ -17,9 +17,9 @@ project_entries:
     url: https://github.com/wngud9646/Devops-04-S2-Team8
     desc: Section 2 Project Github link
 
-  - title: Project 3
-    url: overview-post
-    desc: You can control visibility from _config.yml file
+  - title: Section 3 Project
+    url: https://github.com/wngud9646/project3-msa
+    desc: Section 3 Project Github link
 
   - title: Project 4
     url: overview-post
